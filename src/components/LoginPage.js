@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCurrentUser } from '../actions/userActions';
+import store from "../store";
+
 
 const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -6,8 +11,9 @@ const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useState(null);
-
+    // const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
 
     const handleLogin = async (e) => {
@@ -25,10 +31,18 @@ const LoginPage = () => {
 
         if (response.status === 200) {
             alert(data.message);
-            setUser(data.user);
+            console.log("Full response data:", data);
+            console.log("Email from response:", data.email);
+            dispatch(setCurrentUser(data.email));
+            console.log("Current Redux State after dispatch:", store.getState());
+            navigate('/dashboard');
         } else {
             alert(data.message);
         }
+    };
+
+    const goToRegister = () => {
+        navigate('/register');
     };
 
     return (
@@ -39,7 +53,10 @@ const LoginPage = () => {
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <button type="submit">Login</button>
             </form>
+            <button onClick={goToRegister}>Register</button>
         </div>
+
+
     );
 };
 
