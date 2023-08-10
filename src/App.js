@@ -11,7 +11,7 @@ import store from './store';
 
 
 function App() {
-  return (
+  return ( // Provider로 store를 감싸고, Router로 감싸서 라우팅을 설정
       <Provider store={store}>
       <Router>
           <Routes>
