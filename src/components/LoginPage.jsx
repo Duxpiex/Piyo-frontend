@@ -65,7 +65,7 @@ const LoginPage = () => {
                         </div>
                         <button className="login-button" type="submit">로그인</button>
                     </form>
-                    <button className="register-button" claonClick={goToRegister}>회원가입</button>
+                    <button className="register-button" onClick={goToRegister}>회원가입</button>
                 </div>
 
             </div>
