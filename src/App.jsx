@@ -1,4 +1,4 @@
-// App.js
+// App.jsx
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -7,7 +7,9 @@ import LearningRecordPage from './components/LearningRecordPage';
 import RegisterPage from "./components/RegisterPage";
 import DashboardPage from "./components/DashboardPage";
 import { Provider } from 'react-redux';
+import './App.css';
 import store from './store';
+
 
 
 function App() {

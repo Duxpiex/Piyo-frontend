@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../actions/userActions';
 import store from "../store";
+import '../styles/LoginPage.scss';
 
 
 const backEndUrl = process.env.REACT_APP_BACKEND_URL; // .env 파일에 저장한 백엔드 서버 URL
@@ -46,16 +47,29 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
-                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <button type="submit">Login</button>
-            </form>
-            <button onClick={goToRegister}>Register</button>
-        </div>
+        <div className="outer-container">
+            <div className="login-page">
+                <div className="info-section">
+                    <h1>Piyo</h1>
+                </div>
+                <div className="login-section">
+                    <h2>로그인</h2>
+                    <form onSubmit={handleLogin}>
+                        <div className="input-container">
+                            <label htmlFor="email">이메일 주소</label>
+                            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </div>
+                        <div className="input-container">
+                            <label htmlFor="email">비밀번호</label>
+                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </div>
+                        <button className="login-button" type="submit">로그인</button>
+                    </form>
+                    <button className="register-button" claonClick={goToRegister}>회원가입</button>
+                </div>
 
+            </div>
+        </div>
 
     );
 };
