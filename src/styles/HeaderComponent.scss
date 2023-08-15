@@ -1,0 +1,38 @@
+/* HeaderComponent.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 40px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 반응형 디자인: 태블릿 크기 이하일 때 */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
+
+/* 반응형 디자인: 모바일 크기 이하일 때 */
+@media (max-width: 480px) {
+  .header {
+    padding: 5px 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+}

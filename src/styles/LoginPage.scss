@@ -8,8 +8,8 @@
   background-color: #FFDD67;
 
   .login-page {
-    width: 70%;  // 예를 들어 전체 화면의 70%를 차지하도록 설정
-    height: 70%; // 예를 들어 전체 화면의 80%를 차지하도록 설정
+    width: 70vw;  // 예를 들어 전체 화면의 70%를 차지하도록 설정
+    height: 70vh;
     display: flex;
 
 
@@ -36,6 +36,7 @@
         h2 { // 로그인 섹션의 제목
           margin-bottom: 50px; // 위아래 간격 조정을 위한 마진
           font-family: 'Pretendard', sans-serif;
+          font-size: 28px;
         }
 
 
@@ -46,7 +47,7 @@
           width: 100%;
 
           .input-container {
-            width: 60%;
+            width: 80%;
             position: relative;  // 기준점으로 설정
             padding-top: 20px;  // label이 올라가므로 약간의 여백을 추가
 
@@ -73,27 +74,29 @@
           .login-button {
             text-align: center; // 버튼 텍스트를 가운데 정렬
             margin-top: 40px;
-            width: 60%; // 버튼의 너비를 100%로 설정
-            padding: 15px;
+            width: 70%; // 버튼의 너비를 100%로 설정
+            padding: 20px;
             background-color: #FFDD67;
             color: white;
             font-weight: 700;
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            font-size: 20px;
           }
         }
       .register-button { // 폼 바깥의 회원가입 버튼
         margin-top: 20px;
         text-align: center;
-        width: 60%;
-        padding: 15px;
+        width: 70%;
+        padding: 20px;
         background-color: white;
         font-weight: 700;
         color: #FFDD67;
         border: 1px solid #FFDD67;
         border-radius: 10px;
         cursor: pointer;
+        font-size: 20px;
       }
     }
   }

@@ -23,7 +23,7 @@ const RegisterPage = () => {
 
         if(response.status === 201){ // 회원가입 성공
             const data = await response.json();
-            navigate('/'); // 로그인 페이지로 이동
+            navigate('/login'); // 로그인 페이지로 이동
             alert(data.message);
         }else if (response.status === 400){ // 이메일 중복
             alert('Email already exists');

@@ -6,6 +6,7 @@ import LoginPage from './components/LoginPage';
 import LearningRecordPage from './components/LearningRecordPage';
 import RegisterPage from "./components/RegisterPage";
 import DashboardPage from "./components/DashboardPage";
+import HomePage from "./components/HomePage";
 import { Provider } from 'react-redux';
 import './App.css';
 import store from './store';
@@ -17,7 +18,8 @@ function App() {
       <Provider store={store}>
       <Router>
           <Routes>
-            <Route exact path="/" element={<LoginPage/>} />
+            <Route exact path="/" element={<HomePage/>} />
+            <Route exact path={"/login"} element={<LoginPage/>} />
             <Route exact path="/learning-record" element={<LearningRecordPage/>} />
             <Route exact path={"/register"} element={<RegisterPage/>} />
             <Route exact path={"/dashboard"} element={<DashboardPage/>} />
